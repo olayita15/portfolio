@@ -1,0 +1,24 @@
+@font-face {
+    font-family: 'yoster';
+    src: url('fonts/yoster.ttf') format('truetype');
+}
+
+body{
+    font-family: 'yoster', sans-serif;
+    color: #204473;
+}
+
+#projects {
+    font-family: sans-serif;
+    color: #000000;
+}
+
+#cvpixel {
+    width: 100px;
+    height: 115px;
+}
+
+.icons {
+    width: 50px;
+    height: 50px;
+}

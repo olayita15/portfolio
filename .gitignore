@@ -1,0 +1,21 @@
+# archivos de configuración específicos del equipo
+.idea/
+.vscode/
+
+# archivos de caché generados por Django
+__pycache__/
+*.pyc
+
+# directorios de archivos estáticos y de medios
+staticfiles/
+media/
+
+# directorio de entorno virtual
+venv/
+
+# archivos de registro y archivos de respaldo
+*.log
+*.bak
+
+# archivos con secretos
+secrets.py

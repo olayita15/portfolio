@@ -1,0 +1,56 @@
+{% extends 'layaout.html' %}
+
+{% load static %}
+
+{% block content %}
+    <h1 class="text-center">Chris Dev</h1>
+    <h2 class="text-center">Full-Stack</h2>
+    <section>
+        <h3 class="text-center">Hello World!</h3>
+        <h1 class="text-center">I'm Christian Olaya</h1>
+        <h3 class="text-center">Full-Stack Developer specialized in <strong>Angular</strong> and <strong>Django</strong></h3>    
+    </section>
+    <section class="d-flex justify-content-center">
+        <a href=""><img class="icons mx-2" src="{% static 'portfolio/linkeid.svg' %}" alt="Linkeid"></a>
+        <a href=""><img class="icons mx-2" src="{% static 'portfolio/github.png' %}" alt="Github"></a>
+    </section>
+    <section class="d-flex flex-column align-items-center">
+    <h2 class="text-center">About Me</h2>
+    <p class="text-center">
+        I am a full-stack developer who leverages Angular and JavaScript for front-end and Django and Python for back-end. I am passionate about technology, artificial intelligence, and making a positive impact in the environment around me.
+    </p>
+    <a >
+        <img id="cvpixel" src="{% static 'portfolio/cvpixel.png' %}" alt="CV">
+        <h3>CV</h3>
+    </a>
+    </section>
+    <section class="d-flex flex-column align-items-center">
+        <h2 class="text-center">Technologies</h2>
+        <div class="d-flex flex-row flex-wrap mb-2 justify-content-around">
+                {%for technologie in technologies%}
+                <div class="mx-3">
+                    <img id="icons" class="img-thumbnail icons" src="{{technologie.image.url}}" alt="">
+                </div>
+                {%endfor%}
+        </div>
+    </section>
+
+    <section id="projects" class="d-flex flex-column align-items-center">
+        <h2 class="text-center">Projects</h2>
+        <div>
+            {%for project in projects%}
+            <div class="card" style="width: 18rem;">
+                <img src="{{project.image.url}}" class="card-img-top" alt="{{project.title}}">
+                <div class="card-body">
+                    <h5 class="card-title text-center">{{project.title}}</h5>
+                    <p class="card-text text-center">{{project.description}}</p>
+                    <div class="d-flex flex-row justify-content-around">
+                        <a href="{{project.url_deploy}}" target="_blank" class="btn btn-dark">DEMO </a>
+                        <a href="{{project.url_git}}" target="_blank" class="btn btn-dark">GITHUB</a>
+                    </div>
+                </div>
+            </div>
+            {%endfor%}
+        </div>
+    </section>
+{% endblock %}
