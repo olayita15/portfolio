@@ -1,0 +1,26 @@
+
+    .bar {
+        width:100px;
+        height:25px;
+        padding:5px;
+        background: black;
+        border-radius:5px;
+        
+      }
+      
+      .bar div{
+          display:inline-block;
+          width: var(--width-bar);
+          height:100%;
+          background: repeating-linear-gradient(135deg, #fff111 25%, #fff9a0 25%, #fff9a0 50%, #fff111 50%, #fff111 75%, #fff9a0 75%);
+          border-radius: 3px;
+          box-sizing: border-box;
+          overflow: hidden;
+          background-size: 30px 30px;
+          animation: progress 2s linear infinite;     transition: width .4s ease-in-out
+      }
+      
+      @keyframes progress {
+        0% {background-position:0 0}
+        100% {background-position:60px 0}
+      }

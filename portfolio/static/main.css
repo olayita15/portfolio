@@ -3,22 +3,180 @@
     src: url('fonts/yoster.ttf') format('truetype');
 }
 
-body{
-    font-family: 'yoster', sans-serif;
-    color: #204473;
+.animatedIcon {
+    overflow: hidden;
+	/* box-shadow: 0 0 3rem -1rem rgba(0,0,0,0.5); */
+	transition: transform 0.1s ease-in-out, box-shadow 0.1s;
 }
 
-#projects {
-    font-family: sans-serif;
-    color: #000000;
+.animatedIcon:hover {
+	transform: translateY(-0.5rem) scale(1.0125);
+	/* box-shadow: 0 0.5em 3rem -1rem rgba(0,0,0,0.5); */
 }
 
-#cvpixel {
+html {
+    height: 100%;
+    overflow: hidden;
+}
+
+body { 
+    margin:0;
+    padding:0;
+	perspective: 1px;
+	transform-style: preserve-3d;
+    height: 100%;
+    overflow-y: scroll;
+    overflow-x: hidden;
+    font-family: yoster;
+}
+
+h1 {
+    font-size: 250%;
+    color: #A60311;
+    text-shadow: 0 2px 2px #000;
+}
+
+.name {
+    color: #b9cd9b;
+}
+strong{
+    color: #e17242;
+}
+
+.text {
+    color:#f5d25f;
+}
+
+p {
+    font-size: 140%;
+    line-height: 150%;
+    color: #333;
+}
+
+
+.icons{
+    margin-top: 15%;
     width: 100px;
-    height: 115px;
+    height: 100px;
+    background-color: rgba(255, 255, 255, 0);
 }
 
-.icons {
-    width: 50px;
-    height: 50px;
+.slide {
+    position: relative;
+    padding: 25vh 10%;
+    min-height: 100vh;
+    width: 100vw;
+    box-sizing: border-box;
+    box-shadow: 0 -1px 10px rgba(0, 0, 0, .7);
+	transform-style: inherit;
+}
+
+img {
+  /* position: absolute; */
+  /* top: 50%; */
+  left: 35%;
+  /* width: 320px;
+  height: 240px; */
+  transform: translateZ(.25px) scale(.75) ;
+  /* padding: 20px; */
+  border-radius: 5px;
+  /* background: rgba(240,230,220, .7); */
+  /* box-shadow: 0 0 8px rgba(0, 0, 0, .7); */
+}
+
+/* img:last-of-type {
+  transform: translateZ(.4px) scale(.6) translateX(-104%) translateY(-40%) rotate(-5deg);
+} */
+
+#cardProject img {
+  width: auto;
+}
+
+#cardProject h1 {
+  color: #7E8C69;
+}
+
+.slide:before {
+  content: "";
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  box-shadow: 0 0 8px 1px rgba(0, 0, 0, .7);
+}
+
+.title {
+  width: 50%;
+  padding: 5%;
+  border-radius: 5px;
+  background: rgba(240,230,220, .7);
+  box-shadow: 0 0 8px rgba(0, 0, 0, .7);
+}
+
+.slide:nth-child(2n) .title {
+  margin-left: 0;
+  margin-right: auto;
+}
+
+.slide:nth-child(2n+1) .title {
+  margin-left: auto;
+  margin-right: 0;
+}
+
+.slide, .slide:before {
+  background: 50% 50% / cover;  
+}
+
+.header {
+  text-align: center;
+  font-size: 175%;
+  color: #fff;
+  text-shadow: 0 2px 2px #000;
+}
+
+#title {
+  /* background-image: url("https://picsum.photos/640/480"); */
+  background-image: url("https://cdna.artstation.com/p/assets/images/images/022/357/326/large/mikhail-selnihin-full-day-out-light-x4.jpg?1575137410");
+  z-index:2;
+}
+
+#title h1 {
+ transform: translateZ(.25px) scale(.75);
+ transform-origin: 50% 100%;
+ text-shadow: 0 2px 2px #000;
+}
+
+#slide1:before {
+  /* background-image: url("https://picsum.photos/960/520"); */
+  background-image: url("https://preview.redd.it/akfqd7mvcss51.jpg?auto=webp&s=366856bdf57a60aff9a139835a8f36c3ce60fff8");
+  transform: translateZ(-1px) scale(2);
+}
+
+#slide2 {
+  /* background-image: url("https://picsum.photos/960/400"); */
+  background-image: url("https://images.gamebanana.com/img/ss/mods/6302c5e6c248d.jpg");
+  z-index:2;
+}
+
+#slide3:before {
+  /* background-image: url("https://picsum.photos/980/600"); */
+  background-image: url("https://wallpaperaccess.com/full/7225605.jpg");
+  transform: translateZ(-1px) scale(2);
+}
+
+#slide4 {
+  background: #222;
+}
+
+@media screen and (max-width: 500px) {
+    #links {
+        flex-flow: column wrap;
+    } 
+}
+
+@media screen and (max-width: 900px) {
+  #projectsBox{
+    flex-flow: column wrap;
+  }
 }
