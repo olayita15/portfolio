@@ -7,7 +7,8 @@ class Project(models.Model):
     description = CharField(max_length = 400)
     image = ImageField(upload_to="portfolio/images/projects")
     url_git = URLField(blank=True)
-    url_deploy = URLField(blank=True)
+    url_deploy = models.URLField(blank=True, null=True, help_text="Link opcional al despliegue del proyecto")
+
     
 class Technologie(models.Model):
     title = CharField(max_length = 100)

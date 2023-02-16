@@ -9,10 +9,6 @@
     <h3 class="text-center text mt-5">Hello World!</h3>
     <h1 class="name text-center text-wrap display-1">I'm Christian Olaya</h1>
     <h3 class="text-center my-1 text">Full-Stack Developer specialized in <strong>Angular</strong> and <strong>Django</strong></h3>    
-    <div id="links" class="d-flex justify-content-center my-5 ">
-        <a class="animatedIcon mx-5 p-2" href="https://www.linkedin.com/in/chrisolayadev/" target="_blank"><img class="icons mx-2 animatedIcon" src="{% static 'portfolio/linkeid.svg' %}" alt="Linkeid"></a>
-        <a class="animatedIcon mx-5 p-2" href="https://github.com/olayita15" target="_blank"><img class="icons mx-2 animatedIcon" src="{% static 'portfolio/github.svg' %}" alt="Github"></a>
-    </div>
 </div>
 
 <div id="slide1" class="slide">
@@ -42,7 +38,7 @@
 
 <div id="slide3" class="slide">
     <div class="title w-100">
-        <h1 class="text-center">Projects</h1>
+        <h1 class="text-center mb-3">Projects</h1>
         <div id="projectsBox" class="d-flex flex-column justify-content-around align-items-center">
             {%for project in projects%}
             <!-- <div id="cardProject" class="card my-3" style="width: 18rem;">
@@ -62,7 +58,5 @@
     </div>
 </div>
 
-<div id="slide4" class="slide header">
-    <h1>Contact</h1>
-</div>
+
 {% endblock %}
