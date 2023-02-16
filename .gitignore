@@ -8,7 +8,6 @@ __pycache__/
 
 # directorios de archivos estáticos y de medios
 staticfiles/
-media/
 
 # directorio de entorno virtual
 venv/
