@@ -50,6 +50,7 @@ MIDDLEWARE = [
     'django.contrib.auth.middleware.AuthenticationMiddleware',
     'django.contrib.messages.middleware.MessageMiddleware',
     'django.middleware.clickjacking.XFrameOptionsMiddleware',
+    'django.middleware.locale.LocaleMiddleware',
 ]
 
 ROOT_URLCONF = 'django_portfolio.urls'
@@ -105,6 +106,14 @@ AUTH_PASSWORD_VALIDATORS = [
 
 # Internationalization
 # https://docs.djangoproject.com/en/4.1/topics/i18n/
+LOCALE_PATHS = [
+    os.path.join(BASE_DIR, 'django_portfolio', 'locale'),
+]
+
+LANGUAGES = [
+    ('en', 'English'),
+    ('es', 'Español'),
+]
 
 LANGUAGE_CODE = 'en-us'
 
