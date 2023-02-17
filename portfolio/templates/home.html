@@ -1,21 +1,22 @@
 {% extends 'layaout.html' %}
 
 {% load static %}
+{% load i18n %}
 
 {% block content %}
 <div id="title" class="slide header w-100">
-    <h1 class="name text-center">Chris Dev</h1>
-    <h2 class="text-center my-1">Full-Stack</h2>
-    <h3 class="text-center text mt-5">Hello World!</h3>
-    <h1 class="name text-center text-wrap display-1">I'm Christian Olaya</h1>
-    <h3 class="text-center my-1 text">Full-Stack Developer specialized in <strong>Angular</strong> and <strong>Django</strong></h3>    
+    <h1 class="name text-center">{% translate "Chris Dev" %}</h1>
+    <h2 class="text-center my-1">{% translate "Full-Stack Developer" %}</h2>
+    <h3 class="text-center text mt-5">{% translate "Hello, world!" %}</h3>
+    <h1 class="name text-center text-wrap display-1">{% translate "I'm Christian Olaya" %}</h1>
+    <h3 class="text-center my-1 text"> {% translate "Full-Stack Developer specialized in" %} <strong>Angular</strong> {% translate "and" %} <strong>Django</strong></h3>    
 </div>
 
 <div id="slide1" class="slide">
     <div class="title d-flex flex-column justify-content-center align-items-center w-100" >
-        <h1 class="text-center">About Me</h1>
+        <h1 class="text-center">{% translate "About Me" %}</h1>
         <p class="text-center">
-            I am a full-stack developer who leverages Angular and JavaScript for front-end and Django and Python for back-end. I am passionate about technology, artificial intelligence, and making a positive impact in the environment around me.
+            {% translate "I am a full-stack developer who leverages Angular and JavaScript for front-end and Django and Python for back-end. I am passionate about technology, artificial intelligence, and making a positive impact in the environment around me." %}
         </p>
         <a href="{% static 'portfolio/CV_EN.pdf' %}" target="_blank">
             <img id="cvpixel" class="animatedIcon" src="{% static 'portfolio/cvpixel.svg' %}" alt="CV">
@@ -25,7 +26,7 @@
 
 <div id="slide2" class="slide">
     <div class="title w-100">
-        <h1 class="text-center">Technologies</h1>
+        <h1 class="text-center">{% translate "Technologies" %}</h1>
         <div class="d-flex flex-row flex-wrap mb-2 justify-content-around">
                 {%for technologie in technologies%}
                 <div id="technologie" class="animatedIcon mx-3">
@@ -38,20 +39,9 @@
 
 <div id="slide3" class="slide">
     <div class="title w-100">
-        <h1 class="text-center mb-3">Projects</h1>
-        <div id="projectsBox" class="d-flex flex-column justify-content-around align-items-center">
+        <h1 class="text-center mb-3">{% translate "Projects" %}</h1>
+        <div>
             {%for project in projects%}
-            <!-- <div id="cardProject" class="card my-3" style="width: 18rem;">
-                <img src="{{project.image.url}}" class="card-img-top" alt="{{project.title}}">
-                <div class="card-body">
-                    <h1 class="card-title text-center">{{project.title}}</h1>
-                    <p class="card-text text-center">{{project.description}}</p>
-                    <div class="d-flex flex-row justify-content-around">
-                        <a href="{{project.url_deploy}}" target="_blank" class="btn btn-dark animatedIcon">DEMO </a>
-                        <a href="{{project.url_git}}" target="_blank" class="btn btn-dark animatedIcon">GITHUB</a>
-                    </div>
-                </div>
-            </div> -->
             {% include "elements/card.html" %}
             {%endfor%}
         </div>

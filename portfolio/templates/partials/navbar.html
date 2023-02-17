@@ -1,9 +1,16 @@
 {%load static%}
-<ul class="nav nav-tabs">
+<ul class="nav nav-tabs justify-content-between">
     <li class="nav-item">
-    <a class="nav-link active" aria-current="page" href="#">Home</a>
+        <div class="d-flex flex-row">
+            <a class="nav-link active" aria-current="page" href="#">Home</a>
+            <a class="nav-link" href="{% static 'portfolio/CV_EN.pdf' %}" target="_blank">CV</a>
+        </div>
     </li>
     <li class="nav-item">
-    <a class="nav-link" href="{% static 'portfolio/CV_EN.pdf' %}" target="_blank">CV</a>
+        <div class="d-flex flex-row">
+            <a class="nav-link" href="{% url 'set_language' %}?language=es" >ES</a>
+            <a class="nav-link" href="{% url 'set_language' %}?language=en">EN</a>
+        </div>
     </li>
 </ul>
+
