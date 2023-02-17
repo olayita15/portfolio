@@ -1,6 +1,7 @@
 from django.db import models
 from django.db.models.fields import CharField, URLField, IntegerField
 from django.db.models.fields.files import ImageField
+from .fields import SVGField
 
 class Project(models.Model):
     title = CharField(max_length = 100)
@@ -13,4 +14,4 @@ class Project(models.Model):
 class Technologie(models.Model):
     title = CharField(max_length = 100)
     description = IntegerField(default=0)
-    image = ImageField(upload_to="portfolio/images/tecnhnologies")
+    image = SVGField(upload_to="portfolio/images/tecnhnologies")
